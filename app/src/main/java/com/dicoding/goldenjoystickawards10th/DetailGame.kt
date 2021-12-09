@@ -6,6 +6,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
+import kotlinx.android.synthetic.main.detail_game.*
 
 class DetailGame : AppCompatActivity() {
 
@@ -18,6 +19,7 @@ class DetailGame : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.detail_game)
+        val actionBar = supportActionBar
 
         val tvGameName: TextView = findViewById(R.id.game_name)
         val imgGame: ImageView = findViewById(R.id.game_image)
@@ -27,8 +29,16 @@ class DetailGame : AppCompatActivity() {
         val gameImage = intent.getIntExtra(GAME_IMAGE, 0)
         val gameDetail = intent.getStringExtra(GAME_DETAIL)
 
+        actionBar!!.title = gameName
+        actionBar.setDisplayHomeAsUpEnabled(true)
+        
         tvGameName.text = gameName
         Glide.with(this).load(gameImage).apply(RequestOptions()).into(imgGame)
         tvGameDetail.text = gameDetail
+    }
+
+    override fun onSupportNavigateUp(): Boolean {
+        onBackPressed()
+        return true
     }
 }
