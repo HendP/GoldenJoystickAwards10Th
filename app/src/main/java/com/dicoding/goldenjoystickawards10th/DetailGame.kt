@@ -31,7 +31,7 @@ class DetailGame : AppCompatActivity() {
 
         actionBar!!.title = gameName
         actionBar.setDisplayHomeAsUpEnabled(true)
-        
+
         tvGameName.text = gameName
         Glide.with(this).load(gameImage).apply(RequestOptions()).into(imgGame)
         tvGameDetail.text = gameDetail

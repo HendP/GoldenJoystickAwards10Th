@@ -3,4 +3,7 @@
     <string name="list_name">list of winners for the last 11 years</string>
     <string name="detail_game">Detail Game</string>
     <string name="dummy_text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</string>
+    <string name="about">About</string>
+    <string name="my_name">Hendra Permana</string>
+    <string name="email">hendpermana12@gmail.com</string>
 </resources>
