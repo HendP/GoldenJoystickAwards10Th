@@ -1,5 +1,6 @@
 package com.dicoding.goldenjoystickawards10th
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -42,7 +43,16 @@ class ListGamesAdapter(private val listGames: ArrayList<Game>) :
             .apply(RequestOptions().override(60, 60)).into(holder.imgPhoto)
         holder.tvName.text = game.name
         holder.tvYear.text = goty
-        holder.itemView.setOnClickListener { onItemClickCallback.onItemClicked(listGames[holder.adapterPosition]) }
+
+        val contextGame = holder.itemView.context
+
+        holder.itemView.setOnClickListener {
+            val toDetail = Intent(contextGame, DetailGame::class.java)
+            toDetail.putExtra(DetailGame.GAME_NAME, game.name)
+            toDetail.putExtra(DetailGame.GAME_IMAGE, game.photo)
+            toDetail.putExtra(DetailGame.GAME_DETAIL, game.detail)
+            contextGame.startActivity(toDetail)
+        }
     }
 
     override fun getItemCount(): Int {

@@ -2,6 +2,7 @@ package com.dicoding.goldenjoystickawards10th
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.MenuItem
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -27,16 +28,6 @@ class MainActivity : AppCompatActivity() {
         rvGames.layoutManager = LinearLayoutManager(this)
         val listGamesAdapter = ListGamesAdapter(list)
         rvGames.adapter = listGamesAdapter
-
-        listGamesAdapter.setOnItemClickCallback(object : ListGamesAdapter.OnItemClickCallback {
-            override fun onItemClicked(data: Game) {
-                showSelectedGame(data)
-            }
-        })
-    }
-
-    private fun showSelectedGame(game: Game) {
-        Toast.makeText(this, "Kamu memilih " + game.name, Toast.LENGTH_SHORT).show()
     }
 
     private fun setActionBarTitle(title: String) {
